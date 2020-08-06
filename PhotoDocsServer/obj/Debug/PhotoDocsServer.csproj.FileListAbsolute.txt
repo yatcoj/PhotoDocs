@@ -1,0 +1,10 @@
+G:\Data\Projects\PhotoDocs\PhotoDocsServer\bin\Debug\PhotoDocsServer.exe.config
+G:\Data\Projects\PhotoDocs\PhotoDocsServer\bin\Debug\PhotoDocsServer.exe
+G:\Data\Projects\PhotoDocs\PhotoDocsServer\bin\Debug\PhotoDocsServer.pdb
+G:\Data\Projects\PhotoDocs\PhotoDocsServer\obj\Debug\PhotoDocsServer.csprojAssemblyReference.cache
+G:\Data\Projects\PhotoDocs\PhotoDocsServer\obj\Debug\PhotoDocsServer.csproj.CoreCompileInputs.cache
+G:\Data\Projects\PhotoDocs\PhotoDocsServer\obj\Debug\PhotoDocsServer.exe
+G:\Data\Projects\PhotoDocs\PhotoDocsServer\obj\Debug\PhotoDocsServer.pdb
+G:\Data\Projects\PhotoDocs\PhotoDocsServer\bin\Debug\SharedData.dll
+G:\Data\Projects\PhotoDocs\PhotoDocsServer\bin\Debug\SharedData.pdb
+G:\Data\Projects\PhotoDocs\PhotoDocsServer\obj\Debug\PhotoDocsServer.csproj.CopyComplete

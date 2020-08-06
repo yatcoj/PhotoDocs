@@ -1,0 +1,121 @@
+﻿<Window x:Class="PhotoDocs.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhotoDocs"
+        mc:Ignorable="d"
+        Title="PhotoDocs" Height="726" Width="1271" Background="Blue">
+    <Grid Background="Gray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="994*"/>
+            <ColumnDefinition Width="269*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="ToolSquare" HorizontalAlignment="Left" Margin="9,109,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="Set_ToolSquare" Grid.Column="1">
+            <StackPanel>
+                <Image Source="ButtonImages/square.png" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="ToolCircle" HorizontalAlignment="Left" Margin="36,109,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="Set_ToolCircle" Grid.Column="1">
+            <StackPanel>
+                <Image Source="ButtonImages/circle.png" />
+            </StackPanel>
+        </Button>
+        <Border BorderThickness="1" Background="White" BorderBrush="Gray" Margin="10,32,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="647" Width="968">
+            <Canvas Name="drawArea" HorizontalAlignment="Left" Height="646" Margin="0,0,-1,-1" VerticalAlignment="Top" Width="967" MouseDown="CanvasClick" MouseUp="CanvasUnClick" MouseMove="CanvasDrag">
+                <Canvas.Background>
+                    <SolidColorBrush Color="White" Opacity="255"/>
+                </Canvas.Background>
+            </Canvas>
+        </Border>
+        <DockPanel Grid.ColumnSpan="2">
+            <Menu DockPanel.Dock="Top" Background="Gray">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Open" Click="Open_Pic_Clicked"/>
+                    <MenuItem Header="_Save" Click="Save_Pic_Clicked"/>
+                </MenuItem>
+                <MenuItem Header="_Edit">
+                    <MenuItem Header="_Test"/>
+                    <MenuItem Header="_Close"/>
+                </MenuItem>
+                <MenuItem Header="_Lobby">
+                    <MenuItem Header="_Username">
+                        <TextBox x:Name="UsernameTextBox" HorizontalAlignment="Left" Height="23" Margin="0,0,0,0" TextWrapping="Wrap" Text="Mike Wazowski" VerticalAlignment="Top" Width="120"/>
+                    </MenuItem>
+                    <MenuItem Header="_Server Ip" Click="ChangeServerIp_Clicked">
+                        <TextBox x:Name="ServerIP" HorizontalAlignment="Left" Height="23" Margin="0,0,0,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Top" Width="120"/>
+                    </MenuItem>
+                    <MenuItem Header="_Host" Click="HostLobby_Clicked"/>
+                    <MenuItem Header="_Join" Click="JoinLobby_Clicked">
+                        <TextBox x:Name="LobbyTextBox" HorizontalAlignment="Left" Height="23" Margin="0,0,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+                    </MenuItem>
+                    <MenuItem Header="_Disconnect"/>
+                </MenuItem>
+                <MenuItem Header="_Help">
+                    <MenuItem Header="_InProgress"/>
+                </MenuItem>
+            </Menu>
+            <StackPanel>
+            </StackPanel>
+        </DockPanel>
+        <Slider x:Name="ThicknessSlider" Value="20" HorizontalAlignment="Left" Margin="2,170,0,0" VerticalAlignment="Top" Width="164" Minimum="5" Maximum="200" ValueChanged="ThicknessSlider_ValueChanged" Grid.Column="1" Height="18"/>
+        <Button x:Name="ToolBrush" HorizontalAlignment="Left" Margin="9,58,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="Set_ToolBrush" Grid.Column="1">
+            <StackPanel>
+                <Image Source="ButtonImages/brush.png" />
+            </StackPanel>
+        </Button>
+        <Canvas x:Name="SelectedColorImageBackground" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Grid.Column="1" Margin="9,339,0,0" Width="161">
+            <Canvas.Background>
+                <SolidColorBrush Color="White" Opacity="255"/>
+            </Canvas.Background>
+        </Canvas>
+        <Canvas x:Name="SelectedColorImage" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Grid.Column="1" Margin="9,339,0,0" Width="161">
+            <Canvas.Background>
+                <SolidColorBrush Color="Red" Opacity="255"/>
+            </Canvas.Background>
+        </Canvas>
+        <Label x:Name="RGBALable" Content="Red" HorizontalAlignment="Left" Margin="9,367,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="29"/>
+        <TextBox x:Name="rgb_red" HorizontalAlignment="Left" Height="23" Margin="11,393,0,0" TextWrapping="Wrap" Text="255" VerticalAlignment="Top" Width="34" Grid.Column="1" TextChanged="Rgb_red_TextChanged" PreviewMouseWheel="Rgb_red_TextChanged_Scroll"/>
+        <TextBox x:Name="rgb_green" HorizontalAlignment="Left" Height="23" Margin="54,393,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="33" Grid.Column="1" TextChanged="Rgb_green_TextChanged" PreviewMouseWheel="Rgb_green_TextChanged_Scroll"/>
+        <TextBox x:Name="rgb_blue" HorizontalAlignment="Left" Height="23" Margin="97,393,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="34" Grid.Column="1" TextChanged="Rgb_blue_TextChanged" PreviewMouseWheel="Rgb_blue_TextChanged_Scroll"/>
+        <TextBox x:Name="rgb_alpha" HorizontalAlignment="Left" Height="23" Margin="141,393,0,0" TextWrapping="Wrap" Text="255" VerticalAlignment="Top" Width="32" Grid.Column="1" TextChanged="Rgb_alpha_TextChanged" PreviewMouseWheel="Rgb_alpha_TextChanged_Scroll"/>
+        <Button x:Name="PaintBucket" HorizontalAlignment="Left" Margin="63,58,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="Set_ToolPaintBucket" Grid.Column="1">
+            <StackPanel>
+                <Image Source="ButtonImages/Swap.png" RenderTransformOrigin="0.25,3.5" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="ToolSpray" HorizontalAlignment="Left" Margin="36,58,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="Set_ToolSpray" Grid.Column="1">
+            <StackPanel>
+                <Image Source="ButtonImages/Spray.png" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="ToolColorPicker" HorizontalAlignment="Left" Margin="88,58,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="Set_ToolColorPicker" Grid.Column="1">
+            <StackPanel>
+                <Image Source="ButtonImages/Picker.png" />
+            </StackPanel>
+        </Button>
+        <Label x:Name="RGBALable_Copy" Content="Green" HorizontalAlignment="Left" Margin="45,367,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="47" RenderTransformOrigin="-0.069,0.615"/>
+        <Label x:Name="RGBALable_Copy1" Content="Blue" HorizontalAlignment="Left" Margin="92,367,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="34"/>
+        <Label x:Name="RGBALable_Copy2" Content="Alpha" HorizontalAlignment="Left" Margin="131,367,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="42"/>
+        <Canvas Name="colorSquareBackground" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Margin="9,241,0,0" Width="161" MouseDown="ColorPickerCanvasClick" Grid.Column="1">
+            <Canvas.Background>
+                <SolidColorBrush Color="White" Opacity="255"/>
+            </Canvas.Background>
+        </Canvas>
+        <Canvas Name="colorSquare" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Margin="9,241,0,0" Width="161" MouseDown="ColorPickerCanvasClick" Grid.Column="1">
+            <Canvas.Background>
+                <SolidColorBrush Color="White" Opacity="255"/>
+            </Canvas.Background>
+        </Canvas>
+        <Label x:Name="ThicknessLable" Content="Tool Thickness:" HorizontalAlignment="Left" Margin="4,139,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="99" RenderTransformOrigin="0.793,-8.462"/>
+        <Label x:Name="ThicknessNumber" Content="20" HorizontalAlignment="Left" Margin="98,139,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="38"/>
+        <Button x:Name="ToolColorPicker_Copy" HorizontalAlignment="Left" Margin="114,58,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="Set_ToolEraser" Grid.Column="1">
+            <StackPanel>
+                <Image Source="ButtonImages/Eraser.png" />
+            </StackPanel>
+        </Button>
+        <Label x:Name="ShapesLable" Content="Shapes" HorizontalAlignment="Left" Margin="2,83,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="99" RenderTransformOrigin="0.793,-8.462"/>
+        <Label x:Name="ToolsLable" Content="Tools" HorizontalAlignment="Left" Margin="2,32,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="99" RenderTransformOrigin="0.793,-8.462"/>
+        <Label x:Name="ColorPickerLable" Content="Select Color:" HorizontalAlignment="Left" Margin="4,210,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="99" RenderTransformOrigin="0.793,-8.462"/>
+    </Grid>
+</Window>

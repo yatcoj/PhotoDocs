@@ -1,0 +1,6 @@
+G:\Data\Projects\PhotoDocs\SharedData\bin\Debug\SharedData.dll
+G:\Data\Projects\PhotoDocs\SharedData\bin\Debug\SharedData.pdb
+G:\Data\Projects\PhotoDocs\SharedData\obj\Debug\SharedData.csprojAssemblyReference.cache
+G:\Data\Projects\PhotoDocs\SharedData\obj\Debug\SharedData.csproj.CoreCompileInputs.cache
+G:\Data\Projects\PhotoDocs\SharedData\obj\Debug\SharedData.dll
+G:\Data\Projects\PhotoDocs\SharedData\obj\Debug\SharedData.pdb
